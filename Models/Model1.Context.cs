@@ -25,6 +25,11 @@ namespace TrainingMVCProject.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
+        public virtual DbSet<C_TransactionIndex_4f1ef06c_d956_4805_8bfc_d1e9303426ce> C_TransactionIndex_4f1ef06c_d956_4805_8bfc_d1e9303426ce { get; set; }
+        public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
+        public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
+        public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
         public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
         public virtual DbSet<Course> Courses { get; set; }
         public virtual DbSet<CourseCategory> CourseCategories { get; set; }
