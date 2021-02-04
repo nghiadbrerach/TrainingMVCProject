@@ -1,0 +1,26 @@
+﻿@model IEnumerable<TrainingMVCProject.Models.TraineeAssign>
+@{
+    ViewBag.Title = "CourseAssigned";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>CourseAssigned</h2>
+
+<table class=" table">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.TraineeAssignID)
+        <th>@Html.DisplayNameFor(model => model.CourseID)</th>
+        <th>@Html.DisplayNameFor(model => model.Course.CourseName)</th>
+        <th>@Html.DisplayNameFor(model => model.Trainee.TraineeName)</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.TraineeAssignID)</td>
+            <td>@Html.DisplayFor(modelItem => item.CourseID)</td>
+            <td>@Html.DisplayFor(modelItem => item.Course.CourseName)</td>
+            <td>@Html.DisplayFor(modelItem => item.Trainee.TraineeName)</td>
+
+
+
+        </tr>
+    }

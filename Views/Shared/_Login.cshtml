@@ -1,0 +1,23 @@
+﻿
+@if (Request.IsAuthenticated)
+{
+    if (User.IsInRole("Trainer"))
+    {
+        @Html.Partial("_TrainerMenu");
+    }
+    else if (User.IsInRole("TrainingStaff"))
+    {
+        @Html.Partial("_TrainingStaffMenu");
+    }
+    else if (User.IsInRole("Admin"))
+    {
+        @Html.Partial("_AdminMenu");
+    }
+    else if (User.IsInRole("Trainee"))
+    {
+        @Html.Partial("_TraineeMenu");
+    }
+
+
+}
+

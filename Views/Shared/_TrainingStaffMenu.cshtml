@@ -1,0 +1,34 @@
+﻿<div class="navbar-collapse collapse">
+
+    <ul class="nav navbar-nav navbar-left">
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Course <span class="caret"></span></a>
+
+            <ul class="dropdown-menu" role="menu">
+                <li>@Html.ActionLink("CourseCategories", "Index", "CourseCategories")</li>
+                <li>@Html.ActionLink("Courses List", "Index", "Courses")</li>
+                <li>@Html.ActionLink("Topics", "Index", "Topics")</li>
+                <li>@Html.ActionLink("TopicAssigned","Index","TopicAssigns")
+            </ul>
+        </li>
+       
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Trainee <span class="caret"></span></a>
+
+            <ul class="dropdown-menu" role="menu">
+                <li>@Html.ActionLink("Trainees List", "Index", "Trainees")</li>
+                <li>@Html.ActionLink("TraineeAssigns", "Index", "TraineeAssigns")</li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Trainer <span class="caret"></span></a>
+
+            <ul class="dropdown-menu" role="menu">
+                <li>@Html.ActionLink("Trainers List", "Index", "Trainers")</li>
+                <li>@Html.ActionLink("TrainerAssigns ", "Index", "TrainerAssigns")</li>
+            </ul>
+        </li>
+
+     </ul>
+</div>
+

@@ -1,0 +1,54 @@
+﻿@model IEnumerable<TrainingMVCProject.Models.CourseCategory>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseCategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseCategoryDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Course.CourseName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CourseCategoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CourseCategoryDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Course.CourseName)
+            @*@if (item.Course.Count() >0)
+            {
+                @Html.DisplayFor(modelItem => item.Course.ElementAt(0).Trainee.TraineeName)
+            }
+            else
+            {
+                @Html.ActionLink("Assign", "Create", "TraineeAssigns", new { id = item.CourseID }, null)
+            }*@
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CourseCategoryID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CourseCategoryID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CourseCategoryID })
+        </td>
+    </tr>
+}
+
+</table>

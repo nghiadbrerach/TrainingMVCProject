@@ -1,0 +1,50 @@
+﻿@model TrainingMVCProject.Models.Trainer
+
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Profile</h2>
+<div>
+    <h4>TRAINER</h4>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TrainerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrainerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrainerWorkingPlace)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrainerWorkingPlace)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrainerPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrainerPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrainerEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrainerEmail)
+        </dd>
+
+    </dl>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.TrainerID })
+    
+    </p>
+</div>
+

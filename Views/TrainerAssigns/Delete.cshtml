@@ -1,0 +1,50 @@
+﻿@model TrainingMVCProject.Models.TrainerAssign
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TrainerAssign</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Year)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Topic.TopicName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Topic.TopicName)
+        </dd>
+       
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Trainer.TrainerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Trainer.TrainerName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

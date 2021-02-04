@@ -1,0 +1,67 @@
+﻿@model IEnumerable<TrainingMVCProject.Models.Topic>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm())
+{
+    <p>
+        Find by name: @Html.TextBox("searchString", null, new { @class = "form-control mr-sm-2" })
+        <input type="submit" value="Search" class="btn btn-light" />
+    </p>}
+<h2>TOPIC</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TopicName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TopicDescription)
+        </th>
+        <th>@Html.DisplayNameFor(model => model.Course.CourseName)</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TopicName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TopicDescription)
+            </td>
+            <td>
+                @if (item.TopicAssigns.Count > 0)
+                {
+                    @Html.DisplayFor(modelItem => item.TopicAssigns.ElementAt(0).Course.CourseName)
+                }
+                else
+                {
+                    @Html.ActionLink("Assign", "Create", "TopicAssigns", new { id = item.CourseID }, null)
+                }
+            </td>
+            <td>
+                @if (item.TrainerAssigns.Count > 0)
+                {
+                    @Html.DisplayFor(modelItem => item.TrainerAssigns.ElementAt(0).Trainer.TrainerName)
+                }
+                else
+                {
+                    @Html.ActionLink("Assign", "Create", "TrainerAssigns", new { id = item.TopicID }, null)
+                }
+
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.TopicID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.TopicID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.TopicID })
+            </td>
+        </tr>
+    }
+
+</table>

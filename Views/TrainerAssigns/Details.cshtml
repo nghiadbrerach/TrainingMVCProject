@@ -1,0 +1,43 @@
+﻿@model TrainingMVCProject.Models.TrainerAssign
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TrainerAssign</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Year)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Topic.TopicName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Topic.TopicName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Trainer.TrainerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Trainer.TrainerName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TrainerAssignID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

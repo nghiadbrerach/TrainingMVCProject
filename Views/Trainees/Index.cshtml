@@ -1,0 +1,76 @@
+﻿@model IEnumerable<TrainingMVCProject.Models.Trainee>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>TRAINEE</h2>
+@using (Html.BeginForm())
+{
+    <p>
+        Find by name: @Html.TextBox("searchString", null, new { @class = "form-control mr-sm-2" })
+        <input type="submit" value="Search" class="btn btn-light" />
+    </p>}
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TraineeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TraineeAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TraineeAge)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DOB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MProgramL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TOEIC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Experience)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TraineeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TraineeAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TraineeAge)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DOB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MProgramL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TOEIC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Experience)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.TraineeID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.TraineeID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.TraineeID })
+            </td>
+        </tr>
+    }
+
+</table>

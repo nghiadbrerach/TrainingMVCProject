@@ -1,0 +1,54 @@
+﻿@model IEnumerable<TrainingMVCProject.Models.TrainerAssign>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm())
+{
+    <p>
+        Find by name: @Html.TextBox("searchString", null, new { @class = "form-control mr-sm-2" })
+        <input type="submit" value="Search" class="btn btn-light" />
+    </p>}
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Year)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Topic.TopicName)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.Trainer.TrainerName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Year)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Topic.TopicName)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.Trainer.TrainerName)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.TrainerAssignID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.TrainerAssignID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.TrainerAssignID })
+    </td>
+</tr>
+    }
+
+</table>
